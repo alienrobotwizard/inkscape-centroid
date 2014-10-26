@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Centroid</_name>
+  <id>com.github.thedatachef.inkscape-centroid</id>
+  <dependency type="executable" location="extensions">centroid.rb</dependency>
+  <param name="num_points" type="int" min="10" max="1000" _gui-text="Number of linear segments per curve">100</param>
+  <param name="centroid_radius" type="int" min="1" max="100" _gui-text="Radius of output centroid">10</param>
+  <effect>
+    <object-type>path</object-type>
+    <effects-menu>
+      <submenu _name="Generate from Path"/>
+    </effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">centroid.py</command>
+  </script>
+</inkscape-extension>
