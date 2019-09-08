@@ -4,7 +4,7 @@
   <id>com.github.thedatachef.inkscape-centroid</id>
   <dependency type="executable" location="extensions">centroid.py</dependency>
   <param name="num_points" type="int" min="10" max="1000" _gui-text="Number of linear segments per curve">100</param>
-  <param name="centroid_radius" type="int" min="1" max="100" _gui-text="Radius of output centroid">10</param>
+  <param name="centroid_radius" type="int" min="1" max="100" _gui-text="Radius of output centroid">2</param>
   <effect>
     <object-type>path</object-type>
     <effects-menu>
