@@ -34,9 +34,11 @@ This is a project I created quickly to satisfy my own use case. I welcome any im
 
 ### Attribution
 
-Apple SVG graphic - By Picol.org - http://picol.org/, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=39292830
-Heart SVG graphic - By Heart_left-highlight_jon_01.svg: Jon Phillipsderivative work: Bagande (talk) - Heart_left-highlight_jon_01.svg, CC0, https://commons.wikimedia.org/w/index.php?curid=6797194
-Puzzle SVG graphic - By https://en.wikiversity.org/wiki/User:Rob-nowman - https://en.wikiversity.org/wiki/File:Wikiversity-Mooc-Icon-Associated-units.svg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=36754677
-Frog SVG graphic - By ХЕРАЛДИКА СССС - https://www.shareicon.net/toad-toads-amphibian-biology-animals-frogs-702138, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=71051987
-Bat SVG Graphic - By Christopher T. Howlett, from The Noun Project, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=18497274
-Cheese SVG Graphic - By Carol Liao/toicon.com, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=60818563
+|Graphic|Source|
+|--|--|
+|Apple|By Picol.org - http://picol.org/, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=39292830|
+|Heart|By Heart_left-highlight_jon_01.svg: Jon Phillipsderivative work: Bagande (talk) - Heart_left-highlight_jon_01.svg, CC0, https://commons.wikimedia.org/w/index.php?curid=6797194|
+|Puzzle|By https://en.wikiversity.org/wiki/User:Rob-nowman - https://en.wikiversity.org/wiki/File:Wikiversity-Mooc-Icon-Associated-units.svg, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=36754677|
+|Frog|By ХЕРАЛДИКА СССС - https://www.shareicon.net/toad-toads-amphibian-biology-animals-frogs-702138, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=71051987|
+|Bat|By Christopher T. Howlett, from The Noun Project, CC BY 3.0, https://commons.wikimedia.org/w/index.php?curid=18497274|
+|Cheese|By Carol Liao/toicon.com, CC BY 4.0, https://commons.wikimedia.org/w/index.php?curid=60818563|
