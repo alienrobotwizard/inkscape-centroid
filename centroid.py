@@ -18,6 +18,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 '''
 
+import uuid
 import inkex
 import simplepath, cubicsuperpath, bezmisc, simplestyle
 
@@ -133,10 +134,11 @@ class Centroid(inkex.Effect):
         # the end of the list
         #
         def by_area(y):
-            return abs(y[1])
-        
-        x.sort(key=by_area)
+            return y[1]
 
+        x = [[y[0], abs(y[1])] for y in x]
+        x.sort(key=by_area)
+        
         outermost = x[len(x)-1]
         outermost_centroid = outermost[0]
         outermost_area = outermost[1]
@@ -155,7 +157,9 @@ class Centroid(inkex.Effect):
         cx = cx_numerator/denominator
         cy = cy_numerator/denominator
         c = [cx, cy]
-        draw_SVG_dot(c, self.options.centroid_radius, "centroid-dot", self.current_layer)
+
+        name = "centroid-dot-{}".format(uuid.uuid4().hex[0:6])
+        draw_SVG_dot(c, self.options.centroid_radius, name, self.current_layer)
                         
 if __name__ == '__main__':
     e = Centroid()
