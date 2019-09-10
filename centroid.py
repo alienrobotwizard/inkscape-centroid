@@ -20,6 +20,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 import uuid
 import inkex
+from itertools import chain
 import simplepath, cubicsuperpath, bezmisc, simplestyle
 
 def seq(p0, p1, npts):
@@ -47,24 +48,32 @@ def centroid(x):
     cy = sum([(x[i][1]+x[i+1][1])*(x[i][0]*x[i+1][1] - x[i+1][0]*x[i][1]) for i in r])/(6*a)
     return [cx, cy]
 
-def centroid_and_area(csp, num_points):
+def centroid_and_area(sub, num_points):
+    """Returns centroid and area of a path
+
+    Args:
+        sub: A sub-path of a CubicSuperPath
+
+    Returns:
+        list: Two elements, 1. coordinates of centroid and 2. area
+    """
     coords = []
-    for sub in csp:
-        if sub[0][0] == sub[-1][2]:                                                
-            p0 = sub[0][1]
-            i = 0
-            while i < len(sub)-1:
-                p1 = sub[i][2]
-                p2 = sub[i+1][0]
-                p3 = sub[i+1][1]
-                bez = (p0, p1, p2, p3)
-                coords.extend(bezlinearize(bez, num_points))
-                p0 = p3
-                i+=1
-        else:
-            inkex.errormsg("Path doesn't appear to be closed")
-            return []
-        
+    
+    if sub[0][0] == sub[-1][2]:                                                
+        p0 = sub[0][1]
+        i = 0
+        while i < len(sub)-1:
+            p1 = sub[i][2]
+            p2 = sub[i+1][0]
+            p3 = sub[i+1][1]
+            bez = (p0, p1, p2, p3)
+            coords.extend(bezlinearize(bez, num_points))
+            p0 = p3
+            i+=1
+    else:
+        inkex.errormsg("Path doesn't appear to be closed")
+        return []
+    
     c = centroid(coords)
     a = area(coords)
     return [c, a]
@@ -117,7 +126,11 @@ class Centroid(inkex.Effect):
         # For each selected path, find the centroid and area of it
         # - If one of the selected paths is not closed, returns an error
         #
-        parsed = [cubicsuperpath.parsePath(path.get('d')) for path in paths]                           
+        parsed = [cubicsuperpath.parsePath(path.get('d')) for path in paths]
+        
+        # Unnest paths of paths in cubicsuperpath
+        parsed = list(chain.from_iterable(parsed))
+        
         x = []
         for p in parsed:
             c_and_a = centroid_and_area(p, self.options.num_points)
