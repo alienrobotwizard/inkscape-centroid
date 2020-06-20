@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
   <_name>Centroid</_name>
-  <id>com.github.thedatachef.inkscape-centroid</id>
+  <id>com.github.alienrobotwizard.inkscape-centroid</id>
   <dependency type="executable" location="extensions">centroid.py</dependency>
   <param name="num_points" type="int" min="10" max="1000" _gui-text="Number of linear segments per curve">100</param>
   <param name="centroid_radius" type="int" min="1" max="100" _gui-text="Radius of output centroid">2</param>
