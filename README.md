@@ -2,6 +2,13 @@
 
 Compute centroids for paths and shapes in [Inkscape](https://inkscape.org/) 
 
+### How does this differ than default path measurement?
+
+In short, this tool and the default path measurement (Center of Mass) are nearly identical. If you do not need to compute centroids of objects with holes, then the default tool should be preferred over this extension. Otherwise, this extension will accurately estimate the centroid of a shape with holes. See: 
+![Example](docs/images/comparison-with-default.svg "Comparison with default tool")
+
+Note that the default tool computes independent center of mass for both the outer and inner shape and draws a `+` for each. This extension removes the mass of the hole and draws a red circle at the center of mass of the remaining shape.
+ 
 ### Installation
 There are two files, `centroid.inx` and `centroid.py` which must be copied into your Inkscape extensions folder. The exact location of the extensions dir can be found by opening `Edit --> Preferences --> System` and looking at the user extensions field.
 
